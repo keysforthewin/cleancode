@@ -2,6 +2,11 @@
 
 Every rule in `SKILL.md` applied to one piece of code.
 
+The "before" is the `PrimeGenerator` from Robert C. Martin's *Clean Code*, as
+reproduced and argued over by Martin and John Ousterhout in
+[A Philosophy of Software Design vs Clean Code](https://github.com/johnousterhout/aposd-vs-clean-code/blob/main/README.md).
+The "after" is this skill's rendering, not theirs.
+
 Before:
 
 ```java

@@ -1,0 +1,14 @@
+{
+  "name": "cleancode",
+  "description": "The cleancode skill: naming-first refactoring for Claude Code.",
+  "owner": {
+    "name": "keysforthewin"
+  },
+  "plugins": [
+    {
+      "name": "cleancode",
+      "source": "./",
+      "description": "Naming-first refactoring: restructure code so it can be understood from names alone, then verify behaviour is preserved."
+    }
+  ]
+}

@@ -104,3 +104,11 @@ report the refactoring as complete before the verification has actually run.
 Read `reference/worked-example.md` for a full before/after (Java, sieve of
 Eratosthenes) showing every rule applied to one piece of code, and a note on
 the one thing names could not do.
+
+## Derivation
+
+These rules were derived from the debate between Robert C. Martin (*Clean
+Code*) and John Ousterhout (*A Philosophy of Software Design*),
+<https://github.com/johnousterhout/aposd-vs-clean-code/blob/main/README.md>.
+The worked example is the `PrimeGenerator` they argue over. Neither author
+endorsed this skill.

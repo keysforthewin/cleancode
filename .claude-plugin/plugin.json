@@ -1,0 +1,11 @@
+{
+  "name": "cleancode",
+  "description": "Naming-first refactoring: restructure code so it can be understood from names alone, then verify behaviour is preserved.",
+  "version": "1.0.0",
+  "author": {
+    "name": "keysforthewin"
+  },
+  "homepage": "https://github.com/keysforthewin/cleancode",
+  "repository": "https://github.com/keysforthewin/cleancode",
+  "license": "MIT"
+}

@@ -21,37 +21,80 @@ See [`SKILL.md`](SKILL.md) for all sixteen and
 [`reference/worked-example.md`](reference/worked-example.md) for a full
 before/after.
 
+## Where this comes from
+
+The rules were derived from the published debate between **Robert C. Martin**
+(author of *Clean Code*) and **John Ousterhout** (author of *A Philosophy of
+Software Design*), conducted September 2024 – February 2025:
+
+> [A Philosophy of Software Design vs Clean Code](https://github.com/johnousterhout/aposd-vs-clean-code/blob/main/README.md)
+
+They disagree about method length, comments, and TDD, and work through a
+`PrimeGenerator` example — the same code used as the worked example here —
+to ground the argument. This skill is one reading of that exchange, not a
+statement of either author's position: neither Martin nor Ousterhout endorsed
+or reviewed it, and both would likely take issue with parts of it.
+
 ## Install
 
-Skills live in `~/.claude/skills/<name>/` (available in every project) or
-`.claude/skills/<name>/` inside a single project. Clone into either one:
+Two options. The plugin gets updates handled for you; the clone gets you the
+shorter command name. Pick one — installing both leaves two copies in the
+skill list.
+
+| | Plugin | Clone |
+|---|---|---|
+| Command | `/cleancode:cleancode` | `/cleancode` |
+| Updates | `/plugin marketplace update`, or automatic | `git pull` by hand |
+| Requires | Claude Code with `/plugin` | git only |
+
+### Option 1: as a plugin (recommended)
+
+This repo is its own marketplace. Inside Claude Code:
+
+```
+/plugin marketplace add keysforthewin/cleancode
+/plugin install cleancode@cleancode
+/reload-plugins
+```
+
+The install step asks for a scope — **user** for every project, **project** to
+commit it for collaborators, **local** for just you in this repo.
+
+To get updates automatically, run `/plugin`, open the **Marketplaces** tab,
+select `cleancode`, and choose **Enable auto-update**. Claude Code then
+refreshes it in the background shortly after startup. (Third-party
+marketplaces have auto-update off by default.)
+
+### Option 2: as a plain skill
+
+Clone into `~/.claude/skills/` for every project:
 
 ```bash
 git clone https://github.com/keysforthewin/cleancode.git ~/.claude/skills/cleancode
 ```
 
-For a single project instead:
+…or into one project only:
 
 ```bash
 git clone https://github.com/keysforthewin/cleancode.git .claude/skills/cleancode
 ```
 
-The directory name is what matters — it must be `cleancode` so the slash command
-is `/cleancode`. `SKILL.md` has to sit at the top level of that directory.
+The directory name must be `cleancode` — that is what makes the command
+`/cleancode`, and `SKILL.md` has to sit at its top level. `git clone` refuses a
+directory that already exists, so remove any earlier copy first.
 
-Restart Claude Code (or start a new session) to pick it up.
+Then start a new session, or run `/reload-plugins` in the current one.
 
 ### Verify it installed
 
-```bash
-ls ~/.claude/skills/cleancode/SKILL.md
-```
-
-Then in Claude Code, type `/` and look for `cleancode` in the list.
+Type `/` in Claude Code and look for `cleancode` in the list. For the plugin,
+`/plugin list` shows it too, and the **Errors** tab in `/plugin` reports
+anything that failed to load.
 
 ## Use
 
-Invoke it explicitly on whatever you want restructured:
+Invoke it explicitly on whatever you want restructured (`/cleancode:cleancode`
+if you installed the plugin):
 
 ```
 /cleancode src/parser/tokenizer.js
@@ -66,11 +109,29 @@ code for readability.
 
 ## Update
 
+Plugin:
+
+```
+/plugin marketplace update cleancode
+/reload-plugins
+```
+
+Clone:
+
 ```bash
 git -C ~/.claude/skills/cleancode pull
 ```
 
 ## Uninstall
+
+Plugin:
+
+```
+/plugin uninstall cleancode@cleancode
+/plugin marketplace remove cleancode
+```
+
+Clone:
 
 ```bash
 rm -rf ~/.claude/skills/cleancode
