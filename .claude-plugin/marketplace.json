@@ -1,14 +1,19 @@
 {
-  "name": "cleancode",
-  "description": "The cleancode skill: naming-first refactoring for Claude Code.",
+  "name": "keysforthewin",
+  "description": "Skills by keysforthewin: naming-first refactoring, and situational judgment before answering.",
   "owner": {
     "name": "keysforthewin"
   },
   "plugins": [
     {
       "name": "cleancode",
-      "source": "./",
+      "source": "./plugins/cleancode",
       "description": "Naming-first refactoring: restructure code so it can be understood from names alone, then verify behaviour is preserved."
+    },
+    {
+      "name": "discernment",
+      "source": "./plugins/discernment",
+      "description": "Situational judgment before answering: read the request, your own knowledge, the sources, and the draft before sending it."
     }
   ]
 }

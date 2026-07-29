@@ -1,0 +1,12 @@
+{
+  "name": "discernment",
+  "description": "Situational judgment before answering: read the request, your own knowledge, the sources, and the draft before sending it. Not code-specific.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Christian Boneta",
+    "url": "https://github.com/Tuna119"
+  },
+  "homepage": "https://github.com/keysforthewin/cleancode",
+  "repository": "https://github.com/keysforthewin/cleancode",
+  "license": "MIT"
+}
